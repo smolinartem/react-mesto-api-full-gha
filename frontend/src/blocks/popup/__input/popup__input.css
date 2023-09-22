@@ -1,0 +1,26 @@
+.popup__input {
+  padding-bottom: 10px;
+  padding-top: 12px;
+  border: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--black-color);
+}
+.popup__input:focus {
+  outline: none;
+  background-color: beige;
+}
+
+.popup__input:nth-of-type(1) {
+  margin-bottom: 5px;
+}
+.popup__input:nth-of-type(2) {
+  margin-bottom: 5px;
+}

@@ -1,0 +1,35 @@
+.profile__edit {
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  position: absolute;
+  right: 0;
+  top: 15px;
+
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--white-color);
+
+  background-image: url('../../../images/svg/btn-edit.svg');
+  background-size: 10px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 560px) {
+  .profile__edit {
+    top: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .profile__edit {
+    top: 6px;
+    right: -10px;
+    width: 18px;
+    height: 18px;
+
+    background-size: 8px 8px;
+  }
+}

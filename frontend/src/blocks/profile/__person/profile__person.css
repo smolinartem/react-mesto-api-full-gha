@@ -1,0 +1,17 @@
+.profile__person {
+  position: relative;
+  padding-right: 42px;
+  padding-left: 30px;
+}
+@media screen and (max-width: 680px) {
+  .profile__person {
+    padding-right: 35px;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .profile__person {
+    padding-right: 20px;
+  }
+}

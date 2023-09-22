@@ -1,0 +1,10 @@
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+@media screen and (max-width: 460px) {
+  .header__nav {
+    display: none;
+  }
+}

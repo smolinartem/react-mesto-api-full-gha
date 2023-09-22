@@ -1,0 +1,14 @@
+.gallery__like {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 22px;
+  height: 19px;
+
+  background-image: url('../../../images/svg/btn-like.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

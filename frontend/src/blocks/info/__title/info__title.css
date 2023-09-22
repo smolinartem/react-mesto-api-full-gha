@@ -1,0 +1,14 @@
+.info__title {
+  margin: 0;
+  margin-bottom: 23px;
+  line-height: 29px;
+  color: var(--black-color);
+  font-weight: 900;
+  font-size: 24px;
+  text-align: center;
+}
+@media screen and (max-width: 540px) {
+  .info__title {
+    font-size: 20px;
+  }
+}

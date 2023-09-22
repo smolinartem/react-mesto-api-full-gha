@@ -1,0 +1,12 @@
+.gallery {
+  padding-top: 50px;
+  min-height: 30vh;
+}
+
+@media screen and (max-width: 400px) {
+  .gallery {
+    padding-top: 35px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}

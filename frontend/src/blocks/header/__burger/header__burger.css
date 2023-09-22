@@ -1,0 +1,22 @@
+.header__burger {
+  display: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  width: 24px;
+  height: 24px;
+
+  background-size: 24px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: all 0.4s ease-in;
+}
+
+@media screen and (max-width: 460px) {
+  .header__burger {
+    display: block;
+  }
+}

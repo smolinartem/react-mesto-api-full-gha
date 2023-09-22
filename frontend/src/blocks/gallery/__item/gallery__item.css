@@ -1,0 +1,5 @@
+.gallery__item {
+  max-width: 412px;
+  border-radius: 10px;
+  overflow: hidden;
+}
