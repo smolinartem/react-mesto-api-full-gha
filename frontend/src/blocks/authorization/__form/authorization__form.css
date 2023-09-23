@@ -1,8 +1,0 @@
-.authorization__form {
-  width: 358px;
-}
-@media screen and (max-width: 410px) {
-  .authorization__form {
-    width: 282px;
-  }
-}
