@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
     throw new UnauthorizedError('Необходима авторизация');
   }
 
-  jwt.verify(token, config.JWT_SECRET, (err, decoded) => {
+  jwt.verify(token, config.NODE_ENV === 'production' ? config.JWT_SECRET : 'secret-key', (err, decoded) => {
     if (err) throw new UnauthorizedError('Необходима авторизация');
     req.user = decoded;
   });
