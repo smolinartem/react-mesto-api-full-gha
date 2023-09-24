@@ -52,11 +52,11 @@ const createUser = async (req, res, next) => {
   } catch (err) {
     if (err instanceof Error.ValidationError) {
       next(new BadRequestError('Переданы некорректные данные'));
-    }
-    if (err.code === 11000) {
+    } else if (err.code === 11000) {
       next(new ConflictError('Данный email используется'));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 
@@ -76,8 +76,9 @@ const getCurrentUser = async (req, res, next) => {
   } catch (err) {
     if (err instanceof Error.DocumentNotFoundError) {
       next(new NotFoundError('Пользователь не найден'));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 
@@ -88,11 +89,11 @@ const getUserById = async (req, res, next) => {
   } catch (err) {
     if (err instanceof Error.DocumentNotFoundError) {
       next(new NotFoundError('Пользователь не найден'));
-    }
-    if (err instanceof Error.CastError) {
+    } else if (err instanceof Error.CastError) {
       next(new BadRequestError('Переданы некорректные данные'));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 
@@ -108,11 +109,11 @@ const updateUser = async (req, res, next) => {
   } catch (err) {
     if (err instanceof Error.DocumentNotFoundError) {
       next(new NotFoundError('Пользователь не найден'));
-    }
-    if (err instanceof Error.ValidationError) {
+    } else if (err instanceof Error.ValidationError) {
       next(new BadRequestError(err.message));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 
@@ -128,11 +129,11 @@ const updateAvatar = async (req, res, next) => {
   } catch (err) {
     if (err instanceof Error.DocumentNotFoundError) {
       next(new NotFoundError('Пользователь не найден'));
-    }
-    if (err instanceof Error.ValidationError) {
+    } else if (err instanceof Error.ValidationError) {
       next(new BadRequestError(err.message));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 

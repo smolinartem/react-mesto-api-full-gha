@@ -1,4 +1,3 @@
-const path = require('path');
 const helmet = require('helmet');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -40,8 +39,6 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use(requestLogger);
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/crash-test', () => {
   setTimeout(() => {

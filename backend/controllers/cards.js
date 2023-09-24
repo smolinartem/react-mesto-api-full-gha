@@ -23,8 +23,9 @@ const createNewCard = async (req, res, next) => {
   } catch (err) {
     if (err instanceof Error.ValidationError) {
       next(new BadRequestError(err.message));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 
@@ -39,11 +40,11 @@ const deleteCard = async (req, res, next) => {
   } catch (err) {
     if (err instanceof Error.DocumentNotFoundError) {
       next(new NotFoundError('Карточка не найдена'));
-    }
-    if (err instanceof Error.CastError) {
+    } else if (err instanceof Error.CastError) {
       next(new BadRequestError('Переданы некорректные данные'));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 
@@ -58,11 +59,11 @@ const likeCard = async (req, res, next) => {
   } catch (err) {
     if (err instanceof Error.DocumentNotFoundError) {
       next(new NotFoundError('Карточка не найдена'));
-    }
-    if (err instanceof Error.CastError) {
+    } else if (err instanceof Error.CastError) {
       next(new BadRequestError('Переданы некорректные данные'));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 
@@ -77,11 +78,11 @@ const dislikeCard = async (req, res, next) => {
   } catch (err) {
     if (err instanceof Error.DocumentNotFoundError) {
       next(new NotFoundError('Карточка не найдена'));
-    }
-    if (err instanceof Error.CastError) {
+    } else if (err instanceof Error.CastError) {
       next(new BadRequestError('Переданы некорректные данные'));
+    } else {
+      next(err);
     }
-    next(err);
   }
 };
 
