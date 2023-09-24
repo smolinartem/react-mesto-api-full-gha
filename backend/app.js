@@ -43,6 +43,12 @@ app.use(requestLogger);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/api/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.post('/api/signup', authValidator, createUser);
 app.post('/api/signin', authValidator, login);
 app.use(auth);
